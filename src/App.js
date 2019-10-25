@@ -1,26 +1,41 @@
-import React from 'react';
+import React, {Component} from "react";
 import logo from './logo.svg';
 import './App.css';
+import Notes from './Lessons/Lessons2/Notes';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+	state = {
+		count: 0,
+		name: "Test"
+	}
+
+	increaseCount = () => {
+		this.setState({
+			count: this.state.count + 1,
+		})
+	}
+	decreaseCount = () => {
+		this.setState(state => {
+			return {
+				count: state.count - 1
+			}
+		})
+	}
+
+	componentDidMount() {
+		console.log("App: did mount");
+	}
+
+	componentWillMount() {
+		console.log("App: will mount")
+	}
+
+	render() {
+		return  <div className="App">
+        <Notes/>
+      </div>
+	}
 }
 
 export default App;
