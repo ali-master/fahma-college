@@ -6,10 +6,8 @@ import { Link } from 'react-router-dom';
 const Posts = () => {
 	return (
 		<div>
-			POSTS:  
+			<Route path="/posts" exact>Posts</Route>
 			<Route path="/posts/:post" component={Post} />
-
-			<Link to="/posts">Posts</Link>
 		</div>
 	)
 }

@@ -7,12 +7,14 @@ import {BrowserRouter, Route, Switch} from "react-router-dom"
 import NotFound from "./components/NotFound"
 import Home from './screens/Root';
 import { Redirect } from 'react-router';
+import Hooks from './Lessons/Hooks';
 
 ReactDOM.render((
 	<BrowserRouter>
 	<Switch>
 		<Redirect from="/" exact to="/posts" />
-		<Route path="/" component={Home} />
+		<Route path="/" exact component={Home} />
+		<Route path="/hooks" component={Hooks} />
 		<Route path="*" component={NotFound} />
 	</Switch>
 	</BrowserRouter>
